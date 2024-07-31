@@ -90,16 +90,16 @@ def form_string(source, target)
 	return num_subsequences
 end
 
-# puts("--- TEST 1 ---")
+puts("--- TEST 1 ---")
 source = "abc"
 target = "def"
-# puts(form_string(source, target))
+puts(form_string(source, target))
 # expect -1
 
-# puts("--- TEST 2 ---")
+puts("--- TEST 2 ---")
 source = "abcdef"
 target = "abcadaef"
-# puts(form_string(source, target))
+puts(form_string(source, target))
 # expect 3 (abc + ad + aef)
 
 puts("--- TEST 3 ---")

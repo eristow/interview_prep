@@ -18,10 +18,17 @@ GEM
     connection_pool (2.4.1)
     diff-lcs (1.5.1)
     drb (2.2.1)
+    erubi (1.13.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     minitest (5.24.0)
     mutex_m (0.2.0)
+    netrc (0.11.0)
+    parallel (1.25.1)
+    prism (0.30.0)
+    rbi (0.1.14)
+      prism (>= 0.18.0, < 1.0.0)
+      sorbet-runtime (>= 0.5.9204)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -35,8 +42,34 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
+    sorbet (0.5.11500)
+      sorbet-static (= 0.5.11500)
+    sorbet-runtime (0.5.11500)
+    sorbet-static (0.5.11500-x86_64-linux)
+    sorbet-static-and-runtime (0.5.11500)
+      sorbet (= 0.5.11500)
+      sorbet-runtime (= 0.5.11500)
+    spoom (1.4.2)
+      erubi (>= 1.10.0)
+      prism (>= 0.28.0)
+      sorbet-static-and-runtime (>= 0.5.10187)
+      thor (>= 0.19.2)
+    tapioca (0.15.1)
+      bundler (>= 2.2.25)
+      netrc (>= 0.11.0)
+      parallel (>= 1.21.0)
+      rbi (>= 0.1.4, < 0.2)
+      sorbet-static-and-runtime (>= 0.5.11087)
+      spoom (>= 1.2.0)
+      thor (>= 1.2.0)
+      yard-sorbet
+    thor (1.3.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    yard (0.9.36)
+    yard-sorbet (0.9.0)
+      sorbet-runtime
+      yard
 
 PLATFORMS
   ruby
@@ -47,6 +80,9 @@ DEPENDENCIES
   algorithms
   minitest
   rspec
+  sorbet
+  sorbet-runtime
+  tapioca
 
 BUNDLED WITH
    2.5.13
