@@ -22,15 +22,15 @@ end
 
 puts("--- TEST 1 ---")
 nums = [1,2,3,1]
-puts(contains_duplicates(nums))
+puts(contains_duplicate(nums))
 # expect true
 
 puts("--- TEST 2 ---")
 nums = [1,2,3,4]
-puts(contains_duplicates(nums))
+puts(contains_duplicate(nums))
 # expect false
 
 puts("--- TEST 3 ---")
 nums = [1,1,1,3,3,4,3,2,4,2]
-puts(contains_duplicates(nums))
+puts(contains_duplicate(nums))
 # expect true
