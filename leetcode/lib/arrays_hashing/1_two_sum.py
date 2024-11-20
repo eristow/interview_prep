@@ -19,11 +19,11 @@ set:
 * space: O(n)
 """
 
-from test_utils import test
+from utils import test
 
 
 class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def two_sum(self, nums: list[int], target: int) -> list[int]:
         diffs = {}  # diff -> index
 
         # for i, num in enumerate(nums):
@@ -38,7 +38,7 @@ class Solution:
 
         return []
 
-    def twoSumOnePass(self, nums: list[int], target: int) -> list[int]:
+    def two_sum_one_pass(self, nums: list[int], target: int) -> list[int]:
         prevMap = {}  # val -> index
 
         for i, n in enumerate(nums):
@@ -53,9 +53,9 @@ class Solution:
 def main():
     solution = Solution()
 
-    test(1, [0, 1], solution.twoSum([2, 7, 11, 15], 9))
-    test(2, [1, 2], solution.twoSum([3, 2, 4], 6))
-    test(3, [0, 1], solution.twoSum([3, 3], 6))
+    test(1, [0, 1], solution.two_sum([2, 7, 11, 15], 9))
+    test(2, [1, 2], solution.two_sum([3, 2, 4], 6))
+    test(3, [0, 1], solution.two_sum([3, 3], 6))
 
 
 if __name__ == "__main__":

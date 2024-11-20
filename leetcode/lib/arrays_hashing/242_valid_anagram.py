@@ -15,12 +15,12 @@ Time: O(s + t)
 Space: O(s)
 """
 
-from test_utils import test
+from utils import test
 from collections import defaultdict
 
 
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
+    def is_anagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
 
@@ -43,7 +43,7 @@ class Solution:
         else:
             return False
 
-    def isAnagram2(self, s: str, t: str) -> bool:
+    def is_anagram2(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
 
@@ -56,7 +56,7 @@ class Solution:
 
         return count_s == count_t
 
-    def isAnagramSort(self, s: str, t: str) -> bool:
+    def is_anagram_sort(self, s: str, t: str) -> bool:
         """
         Time: O(s log s + t log t)
         Space: O(1) or O(n + m) (depending on sorting alg)
@@ -69,9 +69,9 @@ class Solution:
 
 def main():
     solution = Solution()
-    test(1, True, solution.isAnagram2("anagram", "nagaram"))
-    test(2, False, solution.isAnagram2("rat", "car"))
-    test(3, False, solution.isAnagram2("ab", "a"))
+    test(1, True, solution.is_anagram2("anagram", "nagaram"))
+    test(2, False, solution.is_anagram2("rat", "car"))
+    test(3, False, solution.is_anagram2("ab", "a"))
 
 
 if __name__ == "__main__":

@@ -14,12 +14,12 @@ two pointers:
 * space: O(1)
 """
 
-from test_utils import test
+from utils import test
 import re
 
 
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
+    def is_palindrome(self, s: str) -> bool:
         # Remove non-alphanum chars from string
         s = re.sub(r"[^a-zA-Z0-9]", "", s).lower()
         # s = "".join(filter(str.isalnum, s)).lower()
@@ -36,21 +36,21 @@ class Solution:
 
         return True
 
-    def alphaNum(self, c: str) -> bool:
+    def alpha_num(self, c: str) -> bool:
         return (
             ord("A") <= ord(c) <= ord("Z")
             or ord("a") <= ord(c) <= ord("z")
             or ord("0") <= ord(c) <= ord("9")
         )
 
-    def isPalindromeAlt(self, s: str) -> bool:
+    def is_palindrome_alt(self, s: str) -> bool:
         l, r = 0, len(s) - 1
 
         while l < r:
-            while l < r and not self.alphaNum(s[l]):
+            while l < r and not self.alpha_num(s[l]):
                 l += 1
 
-            while r < l and not self.alphaNum(s[r]):
+            while r < l and not self.alpha_num(s[r]):
                 r -= 1
 
             if s[l].lower() != s[r].lower():
@@ -60,7 +60,7 @@ class Solution:
 
         return True
 
-    def isPalindromeReverse(self, s: str) -> bool:
+    def is_palindrome_reverse(self, s: str) -> bool:
         newStr = ""
 
         for char in s:
@@ -73,9 +73,9 @@ class Solution:
 def main():
     solution = Solution()
 
-    test(1, True, solution.isPalindrome("A man, a plan, a canal: Panama"))
-    test(2, False, solution.isPalindrome("race a car"))
-    test(3, True, solution.isPalindrome(" "))
+    test(1, True, solution.is_palindrome("A man, a plan, a canal: Panama"))
+    test(2, False, solution.is_palindrome("race a car"))
+    test(3, True, solution.is_palindrome(" "))
 
 
 if __name__ == "__main__":

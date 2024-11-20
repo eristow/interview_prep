@@ -2,11 +2,11 @@
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 """
 
-from test_utils import test
+from utils import test
 
 
 class Solution:
-    def containsDuplicate(self, nums: list[int]) -> bool:
+    def contains_duplicate(self, nums: list[int]) -> bool:
         duplicates = set()
 
         for num in nums:
@@ -20,9 +20,9 @@ class Solution:
 def main():
     solution = Solution()
 
-    test(1, True, solution.containsDuplicate([1, 2, 3, 1]))
-    test(2, False, solution.containsDuplicate([1, 2, 3, 4]))
-    test(3, True, solution.containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
+    test(1, True, solution.contains_duplicate([1, 2, 3, 1]))
+    test(2, False, solution.contains_duplicate([1, 2, 3, 4]))
+    test(3, True, solution.contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ binary search:
 * return -1
 """
 
-from test_utils import test
+from utils import test
 
 
 class Solution:

@@ -20,21 +20,21 @@ Stack:
 * space: O(n)
 """
 
-from test_utils import test
+from utils import test
 
 
 class Solution:
     opening_chars = ["(", "[", "{"]
     closing_chars = [")", "]", "}"]
 
-    def isMatching(self, opening: str, closing: str) -> bool:
+    def is_matching(self, opening: str, closing: str) -> bool:
         return (
             (opening == "(" and closing == ")")
             or (opening == "[" and closing == "]")
             or (opening == "{" and closing == "}")
         )
 
-    def isValid(self, s: str) -> bool:
+    def is_valid(self, s: str) -> bool:
         stack = []
 
         for char in s:
@@ -44,14 +44,14 @@ class Solution:
                 if not stack:
                     return False
 
-                if not self.isMatching(stack.pop(), char):
+                if not self.is_matching(stack.pop(), char):
                     return False
 
         if not stack:
             return True
         return False
 
-    def isValidAlt(self, s: str) -> bool:
+    def is_valid_alt(self, s: str) -> bool:
         closeToOpen = {
             ")": "(",
             "]": "[",
@@ -73,11 +73,11 @@ class Solution:
 
 def main():
     s = Solution()
-    test(1, True, s.isValid("()"))
-    test(2, True, s.isValid("()[]{}"))
-    test(3, False, s.isValid("(]"))
-    test(4, True, s.isValid("([])"))
-    test(5, False, s.isValid("(])]"))
+    test(1, True, s.is_valid("()"))
+    test(2, True, s.is_valid("()[]{}"))
+    test(3, False, s.is_valid("(]"))
+    test(4, True, s.is_valid("([])"))
+    test(5, False, s.is_valid("(])]"))
 
 
 if __name__ == "__main__":
