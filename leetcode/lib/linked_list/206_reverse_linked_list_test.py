@@ -61,24 +61,34 @@ class Solution:
     def reverse_list_recur(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # Case where list is null
         if not head:
+            print("not head")
             return None
 
         # Case where list is one node
         if not head.next:
+            print(f"not head.next. head.val: {head.val}")
             return head
 
         # Second node is the last after reversing
         second_node = head.next
+        print(f"second_node: {second_node.val} | head.val: {head.val}")
 
         # Unlink list to prevent cycle
         head.next = None
+        print("set head.next to None")
 
         # Reverse everything from the second node on
+        print(f"before reverse_rest | head.val: {head.val}")
         reverse_rest = self.reverse_list_recur(second_node)
+        print(f"after reverse_rest | head.val: {head.val}")
 
         # Join the two lists
         second_node.next = head
+        print(f"join lists: second_node.next {second_node.next} | head.val {head.val}")
 
+        print(
+            f"return reverse_rest: reverse_rest.val: {reverse_rest.val} | head.val: {head.val}"
+        )
         return reverse_rest
 
 
@@ -101,7 +111,7 @@ def test_1():
     print(f"expected: {travel_expected}")
 
     # Act
-    actual_1 = s.reverse_list(list_1_1)
+    actual_1 = s.reverse_list_recur(list_1_1)
     travel_actual = actual_1
     print(f"actual: {travel_actual}")
 
@@ -124,7 +134,7 @@ def test_2():
     print(f"expected: {travel_expected}")
 
     # Act
-    actual_2 = s.reverse_list(list_2_1)
+    actual_2 = s.reverse_list_recur(list_2_1)
     travel_actual = actual_2
     print(f"actual: {travel_actual}")
 
@@ -143,7 +153,7 @@ def test_3():
     print(f"expected: {expected}")
 
     # Act
-    actual = s.reverse_list(None)
+    actual = s.reverse_list_recur(None)
     print(f"actual: {actual}")
 
     # Assert
